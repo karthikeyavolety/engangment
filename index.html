@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Engagement Invitation | Sri Ramya & Sai Ram</title>
+  <meta name="description" content="We cordially invite you to celebrate the auspicious Engagement Ceremony of Sri Ramya & Sai Ram on Wednesday, 25th November 2026 in Rajahmundry.">
+  <meta property="og:title" content="Auspicious Engagement Invitation | Sri Ramya & Sai Ram">
+  <meta property="og:description" content="Join us in celebrating the engagement of Sri Ramya & Sai Ram on 25th Nov 2026 at Rajahmundry.">
+  <meta property="og:image" content="assets/invitation_card.jpg">
+
+  <!-- Google Fonts for Regal Indian Aesthetics -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700;800&family=Great+Vibes&family=Rozha+One&family=Yatra+One&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Music Controller (Floating Top Right) -->
+  <div class="music-controller" id="musicCtrl" title="Toggle Auspicious Shehnai / Flute Music">
+    <div class="music-disc" id="musicDisc">
+      <svg class="music-icon" viewBox="0 0 24 24" width="22" height="22">
+        <path fill="currentColor" d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      </svg>
+      <div class="music-bars">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+    <span class="music-label" id="musicLabel">Music: OFF</span>
+  </div>
+
+  <!-- Petals / Confetti Canvas (Full screen interactive particle canvas) -->
+  <canvas id="petalCanvas"></canvas>
+
+  <!-- ============================================== -->
+  <!-- 1. ROYAL SURPRISE ENVELOPE OPENING OVERLAY -->
+  <!-- ============================================== -->
+  <div class="envelope-overlay" id="envelopeOverlay">
+    <div class="stars-bg"></div>
+
+    <div class="royal-envelope-wrapper">
+      <!-- Glow aura behind envelope -->
+      <div class="envelope-glow"></div>
+
+      <!-- Sacred auspicious badge above envelope -->
+      <div class="envelope-header-badge">
+        <div class="om-ganesha-badge">
+          <span class="ganesha-symbol">卐</span>
+          <span class="shree-text">॥ श्री गणेशाय नमः ॥</span>
+          <span class="ganesha-symbol">卐</span>
+        </div>
+        <p class="royal-greeting">An Auspicious Invitation Awaits You</p>
+      </div>
+
+      <!-- 3D Envelope Container -->
+      <div class="envelope-3d" id="envelope3d">
+        <!-- Envelope Back / Interior Pocket -->
+        <div class="env-back">
+          <div class="env-interior-pattern"></div>
+        </div>
+
+        <!-- The Invitation Card Peek inside envelope -->
+        <div class="env-card-peek" id="envCardPeek">
+          <div class="peek-ganesha">卐 ॐ 卐</div>
+          <div class="peek-title">Sri Ramya & Sai Ram</div>
+          <div class="peek-sub">Engagement Invitation</div>
+        </div>
+
+        <!-- Envelope Left and Right Flaps -->
+        <div class="env-flap-left"></div>
+        <div class="env-flap-right"></div>
+        <div class="env-flap-bottom"></div>
+
+        <!-- Envelope Top Flap (Opens upwards) -->
+        <div class="env-flap-top" id="envFlapTop"></div>
+
+        <!-- Royal Ribbon & Wax Seal (Click target) -->
+        <div class="wax-seal-wrapper" id="waxSealWrapper">
+          <div class="ribbon-horizontal"></div>
+          <div class="ribbon-vertical"></div>
+          <button class="wax-seal" id="waxSealBtn" aria-label="Open Invitation">
+            <div class="wax-seal-ring"></div>
+            <div class="wax-seal-inner">
+              <span class="wax-symbol">ॐ</span>
+              <span class="wax-text">TAP TO OPEN</span>
+            </div>
+            <div class="seal-ripple"></div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Prompt text below envelope -->
+      <div class="envelope-instruction">
+        <span class="pulse-sparkle">✨</span>
+        <span>Tap the Royal Seal to Unveil the Celebration</span>
+        <span class="pulse-sparkle">✨</span>
+      </div>
+      <p class="family-honor-text">Volety & Satyavolu Families cordially request your blessings</p>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- 2. MAIN DIGITAL INVITATION EXPERIENCE -->
+  <!-- ============================================== -->
+  <main class="main-content" id="mainContent">
+
+    <!-- Hero Royal Invitation Card Section -->
+    <section class="invitation-hero">
+      
+      <!-- Hanging Flower Garlands & Bells (Decorative Top) -->
+      <div class="hanging-decorations">
+        <div class="garland-row">
+          <div class="toran-string left"></div>
+          <div class="toran-centerpiece">
+            <div class="toran-marigold-cluster">
+              <span class="flower-icon orange">🌸</span>
+              <span class="flower-icon yellow">🌼</span>
+              <span class="flower-icon pink">🌺</span>
+              <span class="flower-icon yellow">🌼</span>
+              <span class="flower-icon orange">🌸</span>
+            </div>
+          </div>
+          <div class="toran-string right"></div>
+        </div>
+
+        <!-- Hanging brass bells with gentle swinging animation -->
+        <div class="hanging-bells-container">
+          <div class="hanging-chain h-left-1" data-speed="1.2">
+            <div class="chain-line"></div>
+            <div class="brass-bell">🔔</div>
+          </div>
+          <div class="hanging-chain h-left-2" data-speed="0.9">
+            <div class="chain-line"></div>
+            <div class="brass-bell">🔔</div>
+          </div>
+          <div class="hanging-chain h-right-2" data-speed="1.1">
+            <div class="chain-line"></div>
+            <div class="brass-bell">🔔</div>
+          </div>
+          <div class="hanging-chain h-right-1" data-speed="1.3">
+            <div class="chain-line"></div>
+            <div class="brass-bell">🔔</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- The Royal Golden Frame Invitation Card -->
+      <div class="royal-card-container">
+        <div class="gold-frame-outer">
+          <div class="gold-frame-inner">
+
+            <!-- Ornate Corner Motifs (Traditional Indian Temple Architecture) -->
+            <div class="ornate-corner top-left"></div>
+            <div class="ornate-corner top-right"></div>
+            <div class="ornate-corner bottom-left"></div>
+            <div class="ornate-corner bottom-right"></div>
+
+            <!-- Side Standing Golden Deepams / Diyas with flickering flame -->
+            <div class="standing-diya left-diya">
+              <div class="diya-glow"></div>
+              <div class="diya-flame"></div>
+              <div class="diya-stand">🪔</div>
+            </div>
+            <div class="standing-diya right-diya">
+              <div class="diya-glow"></div>
+              <div class="diya-flame"></div>
+              <div class="diya-stand">🪔</div>
+            </div>
+
+            <!-- Card Inner Header: Ganesha -->
+            <header class="card-header">
+              <div class="ganesha-emblem-wrapper">
+                <div class="divine-rays"></div>
+                <!-- Lord Ganesha Silhouette / Icon -->
+                <div class="ganesha-art">
+                  <svg viewBox="0 0 100 100" class="ganesha-svg" width="90" height="90">
+                    <defs>
+                      <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#BF953F" />
+                        <stop offset="25%" stop-color="#FCF6BA" />
+                        <stop offset="50%" stop-color="#B38728" />
+                        <stop offset="75%" stop-color="#FBF5B7" />
+                        <stop offset="100%" stop-color="#AA771C" />
+                      </linearGradient>
+                      <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="2" result="blur" />
+                        <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                      </filter>
+                    </defs>
+                    <!-- Sacred Ganesha Stylized Motif -->
+                    <circle cx="50" cy="50" r="46" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-dasharray="4 2" />
+                    <circle cx="50" cy="50" r="41" fill="none" stroke="url(#goldGrad)" stroke-width="1.2" />
+                    <!-- Crown & Tilak -->
+                    <path d="M50 16 L54 26 L50 25 L46 26 Z" fill="url(#goldGrad)" />
+                    <circle cx="50" cy="22" r="1.5" fill="#c0392b" />
+                    <!-- Ganesha Head & Trunk -->
+                    <path d="M35 34 C33 26 42 24 50 27 C58 24 67 26 65 34 C64 42 62 46 54 48 C51 49 49 52 49 57 C49 63 53 66 56 65 C58 64 59 62 60 62 C61 63 60 66 57 68 C53 70 45 68 45 58 C45 52 47 48 44 46 C37 44 36 39 35 34 Z" fill="url(#goldGrad)" filter="url(#goldGlow)" />
+                    <!-- Modak / Ladoo in trunk hand -->
+                    <circle cx="58" cy="62" r="2.5" fill="#f39c12" />
+                    <!-- Ears -->
+                    <path d="M36 32 C26 31 23 43 32 46 C35 47 37 45 37 42" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" />
+                    <path d="M64 32 C74 31 77 43 68 46 C65 47 63 45 63 42" fill="none" stroke="url(#goldGrad)" stroke-width="2" stroke-linecap="round" />
+                    <!-- Holy Red Kumkum Tilak -->
+                    <path d="M48.5 30 Q50 26 51.5 30 Q50 36 48.5 30 Z" fill="#b71540" />
+                    <circle cx="50" cy="37" r="1.2" fill="#f1c40f" />
+                  </svg>
+                </div>
+              </div>
+
+              <p class="blessing-invocation">With the blessings of</p>
+              <h2 class="deity-name">Lord Ganesha</h2>
+              
+              <div class="ornate-divider">
+                <span class="line"></span>
+                <span class="motif">⚜ ❈ ⚜</span>
+                <span class="line"></span>
+              </div>
+
+              <p class="invitation-lead">We are delighted to invite you<br>to grace the engagement of</p>
+            </header>
+
+            <!-- Couple Spotlight Names with Royal Calligraphy -->
+            <div class="couple-announcement">
+              <div class="partner bride-block">
+                <div class="floral-flourish left-flower">🌸</div>
+                <div class="partner-details">
+                  <h1 class="couple-name bride-name shimmer-text">Sri Ramya</h1>
+                  <span class="role-badge">(Bride)</span>
+                </div>
+                <div class="floral-flourish right-flower">🌸</div>
+              </div>
+
+              <div class="ampersand-divider">
+                <div class="amp-line"></div>
+                <div class="amp-circle">
+                  <span class="and-symbol">&</span>
+                </div>
+                <div class="amp-line"></div>
+              </div>
+
+              <div class="partner groom-block">
+                <div class="floral-flourish left-flower">🌸</div>
+                <div class="partner-details">
+                  <h1 class="couple-name groom-name shimmer-text">Sai Ram</h1>
+                  <span class="role-badge">(Groom)</span>
+                </div>
+                <div class="floral-flourish right-flower">🌸</div>
+              </div>
+            </div>
+
+            <!-- Warm Welcoming Note -->
+            <p class="heartfelt-message">
+              "Your gracious presence and blessings will make the occasion more special for us."
+            </p>
+
+            <!-- Auspicious Details Badge Row (Date, Time, Venue) -->
+            <div class="event-details-grid">
+              
+              <!-- Date Card -->
+              <div class="detail-card date-card">
+                <div class="card-icon-bubble">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="#a82333">
+                    <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2z"/>
+                  </svg>
+                </div>
+                <div class="card-text">
+                  <span class="card-day">Wednesday,</span>
+                  <strong class="card-date-highlight">25th November 2026</strong>
+                  <span class="card-sub-tag">Save the Date</span>
+                </div>
+              </div>
+
+              <!-- Time Card -->
+              <div class="detail-card time-card">
+                <div class="card-icon-bubble">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="#a82333">
+                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
+                  </svg>
+                </div>
+                <div class="card-text">
+                  <span class="card-day">at</span>
+                  <strong class="card-date-highlight">9:20 AM</strong>
+                  <span class="card-sub-tag auspicious-badge">Auspicious Sumuhurtham 🔔</span>
+                </div>
+              </div>
+
+              <!-- Venue Card -->
+              <div class="detail-card venue-card">
+                <div class="card-icon-bubble">
+                  <svg viewBox="0 0 24 24" width="28" height="28" fill="#a82333">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                </div>
+                <div class="card-text">
+                  <span class="card-day">Venue :</span>
+                  <strong class="venue-title">3Star Mini Function Hall</strong>
+                  <p class="venue-address">Beside Goli Rama Rao Hospital,<br>Danavaipeta, Rajahmundry.</p>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Followed By Lunch Notice -->
+            <div class="lunch-banner">
+              <span class="sparkle-leaf">🌿</span>
+              <span class="lunch-text">~ followed by lunch ~</span>
+              <span class="sparkle-leaf">🌿</span>
+            </div>
+
+            <!-- Closing Gratitude & Family Names -->
+            <div class="closing-salutation">
+              <p class="closing-lead">We look forward to sharing this special day with you.</p>
+              
+              <div class="family-tree">
+                <span class="from-text">From</span>
+                <h3 class="family-names shimmer-purple">Volety and Satyavolu Families</h3>
+              </div>
+            </div>
+
+            <!-- Divine Couple Art: Sita Rama / Radha Krishna Kalyana Motifs -->
+            <div class="divine-illustration-container">
+              <div class="divine-painting-frame">
+                <!-- Divine illustration visual representation with decorative garlands -->
+                <div class="traditional-scene">
+                  <div class="divine-halo"></div>
+                  <!-- Garland Ring Exchange Silhouette / Traditional Art -->
+                  <div class="divine-figures">
+                    <div class="figure-rama">
+                      <div class="crown">👑</div>
+                      <div class="figure-body rama-color">
+                        <span class="attire-yellow"></span>
+                      </div>
+                    </div>
+                    <div class="garland-exchange-symbol">
+                      <span class="heart-blessing">💖</span>
+                      <span class="floral-mala">🌺🏵️🌺</span>
+                    </div>
+                    <div class="figure-sita">
+                      <div class="sita-crown">✨</div>
+                      <div class="figure-body sita-color">
+                        <span class="attire-green"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="floral-base-carpet">
+                    <span>🌸 🌼 🌺 🏵️ 🪔 🏵️ 🌺 🌼 🌸</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Interactive "Shower Blessings" Button (Surprise interaction!) -->
+            <div class="interactive-blessing-panel">
+              <button class="blessings-action-btn" id="showerBlessingsBtn" aria-label="Shower flower blessings">
+                <span class="btn-ripple"></span>
+                <span class="btn-icon">💐</span>
+                <span class="btn-text">Shower Flower & Akshata Blessings</span>
+                <span class="btn-sparkle">✨</span>
+              </button>
+              
+              <div class="blessing-stats">
+                <span class="blessing-counter-icon">🪔</span>
+                <span class="blessing-count-text" id="blessingCountDisplay">128</span>
+                <span class="blessing-sub">Blessings showered on the couple!</span>
+              </div>
+              
+              <div class="floating-blessing-msg" id="floatingBlessingMsg"></div>
+            </div>
+
+            <!-- Action Buttons: Original Card & WhatsApp Share -->
+            <div class="card-quick-actions">
+              <button class="action-pill-btn gold" id="viewOriginalCardBtn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+                </svg>
+                <span>View Original Invitation Card</span>
+              </button>
+
+              <button class="action-pill-btn green" id="whatsappShareBtn">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                  <path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0012.04 2zm.01 17.8c-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.32a7.87 7.87 0 01-1.21-4.22c0-4.36 3.55-7.91 7.91-7.91 2.11 0 4.1.82 5.6 2.31 1.49 1.49 2.31 3.48 2.31 5.6 0 4.36-3.55 7.89-7.92 7.89zm4.33-5.91c-.24-.12-1.4-.69-1.62-.77-.22-.08-.37-.12-.53.12-.16.24-.61.77-.75.93-.14.16-.28.18-.51.06-.24-.12-1-.37-1.9-1.18-.7-.62-1.18-1.4-1.32-1.63-.14-.24-.01-.36.1-.48.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.53-1.27-.72-1.74-.19-.46-.39-.4-.53-.41-.14-.01-.3-.01-.46-.01-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.35.99 2.51c.12.16 1.71 2.62 4.15 3.67.58.25 1.03.4 1.38.52.58.19 1.11.16 1.53.1.47-.07 1.4-.57 1.6-1.13.2-.55.2-1.02.14-1.12-.06-.11-.22-.17-.46-.29z"/>
+                </svg>
+                <span>Share with Family on WhatsApp</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 3. COUNTDOWN TO THE AUSPICIOUS CEREMONY -->
+    <!-- ============================================== -->
+    <section class="section-container countdown-section">
+      <div class="section-title-wrap">
+        <span class="sub-heading">AUSPICIOUS TIMING</span>
+        <h2 class="main-heading">Counting Down to the Big Day</h2>
+        <div class="title-leaf-divider">🌿 ❦ 🌿</div>
+      </div>
+
+      <div class="countdown-grid" id="countdownGrid">
+        <div class="timer-box">
+          <div class="timer-val" id="daysVal">00</div>
+          <div class="timer-unit">Days</div>
+        </div>
+        <div class="timer-colon">:</div>
+        <div class="timer-box">
+          <div class="timer-val" id="hoursVal">00</div>
+          <div class="timer-unit">Hours</div>
+        </div>
+        <div class="timer-colon">:</div>
+        <div class="timer-box">
+          <div class="timer-val" id="minutesVal">00</div>
+          <div class="timer-unit">Minutes</div>
+        </div>
+        <div class="timer-colon">:</div>
+        <div class="timer-box">
+          <div class="timer-val" id="secondsVal">00</div>
+          <div class="timer-unit">Seconds</div>
+        </div>
+      </div>
+
+      <div class="calendar-actions">
+        <!-- Add to Google Calendar -->
+        <a id="addToGoogleCalBtn" class="cal-btn google-cal" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+          </svg>
+          <span>Add to Google Calendar</span>
+        </a>
+
+        <!-- Download iCal (.ics) -->
+        <button id="downloadIcalBtn" class="cal-btn apple-cal">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+          </svg>
+          <span>Download Apple / Outlook Invite (.ics)</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 4. AUSPICIOUS CEREMONY TIMELINE -->
+    <!-- ============================================== -->
+    <section class="section-container timeline-section">
+      <div class="section-title-wrap">
+        <span class="sub-heading">PROGRAM SCHEDULE</span>
+        <h2 class="main-heading">Engagement Ceremony Itinerary</h2>
+        <div class="title-leaf-divider">🌿 ❦ 🌿</div>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Step 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot">🪔</div>
+          <div class="timeline-card">
+            <div class="timeline-time">09:00 AM</div>
+            <h3 class="timeline-title">Swagatam & Mangala Harathi</h3>
+            <p class="timeline-desc">Warm traditional welcome with rose water, chandan, and melodious Nadaswaram notes as loved ones arrive.</p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="timeline-item highlight-item">
+          <div class="timeline-dot star-dot">⭐</div>
+          <div class="timeline-card">
+            <div class="time-badge">Main Muhurtham</div>
+            <div class="timeline-time">09:20 AM</div>
+            <h3 class="timeline-title">Auspicious Sumuhurtham & Engagement</h3>
+            <p class="timeline-desc">Sacred Ganapathi Pooja, reading of the Lagna Patrika, exchange of betel leaves & auspicious covenants between Volety & Satyavolu families.</p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot">💍</div>
+          <div class="timeline-card">
+            <div class="timeline-time">10:15 AM</div>
+            <h3 class="timeline-title">Ring Exchange & Floral Garlands</h3>
+            <p class="timeline-desc">Sri Ramya & Sai Ram exchange their engagement rings and garlands amidst showers of fragrant Akshata and hearty cheers.</p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="timeline-item">
+          <div class="timeline-dot">📸</div>
+          <div class="timeline-card">
+            <div class="timeline-time">11:00 AM</div>
+            <h3 class="timeline-title">Blessings from Elders & Photography</h3>
+            <p class="timeline-desc">Elders bless the couple on stage, followed by group photographs and heartfelt congratulations from dear family and friends.</p>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="timeline-item">
+          <div class="timeline-dot">🍲</div>
+          <div class="timeline-card">
+            <div class="timeline-time">12:30 PM Onwards</div>
+            <h3 class="timeline-title">Grand Traditional Andhra Bhojanam (Lunch)</h3>
+            <p class="timeline-desc">Indulge in a royal feast featuring mouthwatering Andhra delicacies, fragrant sweets, and hot filter coffee.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 5. VENUE & ROUTE NAVIGATION -->
+    <!-- ============================================== -->
+    <section class="section-container venue-section">
+      <div class="section-title-wrap">
+        <span class="sub-heading">LOCATION GUIDE</span>
+        <h2 class="main-heading">How to Reach the Venue</h2>
+        <div class="title-leaf-divider">🌿 ❦ 🌿</div>
+      </div>
+
+      <div class="venue-card-expanded">
+        <div class="venue-info-side">
+          <div class="venue-badge">Rajahmundry • Andhra Pradesh</div>
+          <h3 class="venue-name-big">3Star Mini Function Hall</h3>
+          
+          <div class="venue-detail-row">
+            <span class="v-icon">📍</span>
+            <div>
+              <strong>Landmark:</strong> Beside Goli Rama Rao Hospital
+            </div>
+          </div>
+
+          <div class="venue-detail-row">
+            <span class="v-icon">🏛️</span>
+            <div>
+              <strong>Locality:</strong> Danavaipeta, Rajahmundry
+            </div>
+          </div>
+
+          <div class="venue-detail-row">
+            <span class="v-icon">🚗</span>
+            <div>
+              <strong>Convenience:</strong> Centrally located in Danavaipeta with accessible parking and seamless transit connectivity.
+            </div>
+          </div>
+
+          <div class="venue-actions-btns">
+            <!-- Open in Google Maps -->
+            <a href="https://www.google.com/maps/search/?api=1&query=3Star+Mini+Function+Hall+Beside+Goli+Rama+Rao+Hospital+Danavaipeta+Rajahmundry" target="_blank" rel="noopener noreferrer" class="map-primary-btn">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+              </svg>
+              <span>Get Directions on Google Maps</span>
+            </a>
+
+            <!-- Copy Full Address -->
+            <button class="copy-address-btn" id="copyAddressBtn">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+              </svg>
+              <span id="copyBtnText">Copy Address</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="venue-map-embed-side">
+          <div class="map-preview-card">
+            <div class="map-art-bg">
+              <div class="pin-pulse"></div>
+              <div class="map-pin-icon">📍</div>
+              <div class="map-location-title">3Star Mini Function Hall</div>
+              <div class="map-sub">Danavaipeta, Rajahmundry</div>
+              <a href="https://www.google.com/maps/search/?api=1&query=3Star+Mini+Function+Hall+Beside+Goli+Rama+Rao+Hospital+Danavaipeta+Rajahmundry" target="_blank" rel="noopener noreferrer" class="open-map-badge">
+                Click to Open Live Navigation ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 6. WALL OF BLESSINGS & GUESTBOOK (RSVP / WISHES) -->
+    <!-- ============================================== -->
+    <section class="section-container guestbook-section">
+      <div class="section-title-wrap">
+        <span class="sub-heading">GUESTBOOK OF LOVE</span>
+        <h2 class="main-heading">Send Your Heartfelt Wishes</h2>
+        <div class="title-leaf-divider">🌿 ❦ 🌿</div>
+        <p class="guestbook-lead">Leave a loving message and blessing for Sri Ramya & Sai Ram on their special engagement day!</p>
+      </div>
+
+      <div class="guestbook-layout">
+        <!-- Form to add wishes -->
+        <div class="wishes-form-card">
+          <h3 class="form-title">Write Your Blessing 💌</h3>
+          <form id="wishesForm">
+            <div class="form-group">
+              <label for="guestName">Your Full Name / Family Name *</label>
+              <input type="text" id="guestName" required placeholder="e.g. Ramesh & Sunitha V." autocomplete="name">
+            </div>
+
+            <div class="form-group">
+              <label for="guestRelation">Relation / From *</label>
+              <input type="text" id="guestRelation" required placeholder="e.g. Cousin / Friend / Hyderabad">
+            </div>
+
+            <div class="form-group">
+              <label for="guestMessage">Your Blessing Message *</label>
+              <textarea id="guestMessage" rows="3" required placeholder="Wishing Sri Ramya & Sai Ram a life full of love, laughter, and endless happiness!"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="rsvp-label">Will you grace us with your presence?</label>
+              <div class="rsvp-radio-group">
+                <label class="radio-pill">
+                  <input type="radio" name="attendance" value="Yes, joyfully attending" checked>
+                  <span>🎉 Yes, Joyfully Attending!</span>
+                </label>
+                <label class="radio-pill">
+                  <input type="radio" name="attendance" value="Sending warm blessings from afar">
+                  <span>💐 Sending Blessings from Afar</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="submit-wish-btn" id="submitWishBtn">
+              <span>Send Wishes & Blessings</span>
+              <span class="send-arrow">➔</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Live Wall of Wishes Cards -->
+        <div class="wishes-wall-container">
+          <div class="wishes-wall-header">
+            <h4>Blessings Wall (<span id="totalWishesCount">4</span>)</h4>
+            <span class="live-pulse-dot">● Live</span>
+          </div>
+
+          <div class="wishes-cards-list" id="wishesList">
+            <!-- Dynamically populated and preloaded with warm wishes -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- 7. FOOTER SECTION -->
+    <!-- ============================================== -->
+    <footer class="royal-footer">
+      <div class="footer-toran">🌸 🪔 🌼 🪔 🌸</div>
+      <div class="footer-sacred">॥ सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः ॥</div>
+      <p class="footer-tagline">"May happiness, health and peace shower upon everyone."</p>
+      <div class="footer-couple-names">Sri Ramya 💖 Sai Ram</div>
+      <p class="footer-credits">With Love & Regards,<br><strong>Volety & Satyavolu Families</strong></p>
+      <p class="venue-reminder">Wednesday, 25th November 2026 • 9:20 AM • Rajahmundry</p>
+    </footer>
+
+  </main>
+
+  <!-- ============================================== -->
+  <!-- MODAL: VIEW ORIGINAL PRINTED INVITATION CARD -->
+  <!-- ============================================== -->
+  <div class="card-modal" id="cardModal">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">✕</button>
+      <div class="modal-header">
+        <h3>Original Engagement Invitation</h3>
+        <p>Sri Ramya & Sai Ram</p>
+      </div>
+      <div class="modal-image-wrapper">
+        <img src="assets/invitation_card.jpg" alt="Original printed engagement invitation card of Sri Ramya and Sai Ram" class="modal-img" id="modalImg">
+      </div>
+      <div class="modal-footer-actions">
+        <a href="assets/invitation_card.jpg" download="SriRamya_SaiRam_Engagement_Invite.jpg" class="download-card-btn">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+          </svg>
+          <span>Save Card to Phone</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notification" id="toastNotification">
+    <span class="toast-icon" id="toastIcon">✨</span>
+    <span class="toast-text" id="toastText">Address copied to clipboard!</span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
